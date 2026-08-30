@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coming Soon</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #b00000;
+      --bright-red: #ff1a1a;
+      --dark: #030000;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      background: #030000;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(130, 0, 0, .3),
+          transparent 45%
+        ),
+        #030000;
+    }
+
+    .background::before {
+      content: "";
+
+      position: absolute;
+
+      width: 90vw;
+      height: 90vw;
+
+      max-width: 1000px;
+      max-height: 1000px;
+
+      left: 50%;
+      top: 55%;
+
+      transform: translate(-50%, -50%);
+
+      background: rgba(150, 0, 0, .45);
+
+      filter: blur(150px);
+
+      border-radius: 50%;
+
+      animation: pulse 5s ease-in-out infinite;
+    }
+
+    .background::after {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      background: rgba(255, 0, 0, .25);
+
+      filter: blur(120px);
+
+      border-radius: 50%;
+
+      left: 20%;
+      top: 20%;
+
+      animation: moveGlow 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+
+      0%, 100% {
+        opacity: .55;
+        transform:
+          translate(-50%, -50%)
+          scale(.9);
+      }
+
+      50% {
+        opacity: .9;
+        transform:
+          translate(-50%, -50%)
+          scale(1.1);
+      }
+    }
+
+    @keyframes moveGlow {
+
+      0% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(300px, 100px);
+      }
+
+      100% {
+        transform: translate(-100px, 300px);
+      }
+    }
+
+
+    /* =========================
+       PARTICLES
+    ========================== */
+
+    .particles {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 2;
+    }
+
+    .particle {
+      position: absolute;
+
+      width: 2px;
+      height: 2px;
+
+      border-radius: 50%;
+
+      background: #ff2222;
+
+      box-shadow:
+        0 0 8px #ff0000;
+
+      animation:
+        float linear infinite;
+
+      opacity: 0;
+    }
+
+    @keyframes float {
+
+      0% {
+        transform:
+          translateY(110vh)
+          scale(.5);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .7;
+      }
+
+      90% {
+        opacity: .4;
+      }
+
+      100% {
+        transform:
+          translateY(-10vh)
+          scale(1.5);
+
+        opacity: 0;
+      }
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================== */
+
+    .container {
+
+      position: relative;
+
+      z-index: 5;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 20px;
+    }
+
+    .content {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 900px;
+
+      padding: 40px 20px;
+    }
+
+
+    /* =========================
+       STATUS
+    ========================== */
+
+    .status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      padding: 8px 15px;
+
+      margin-bottom: 28px;
+
+      border: 1px solid
+        rgba(255, 30, 30, .25);
+
+      border-radius: 100px;
+
+      background:
+        rgba(80, 0, 0, .18);
+
+      backdrop-filter: blur(15px);
+
+      color: #d9d9d9;
+
+      font-size: 10px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--bright-red);
+
+      box-shadow:
+        0 0 8px var(--bright-red),
+        0 0 18px var(--bright-red);
+
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+
+      0%, 100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .3;
+      }
+    }
+
+
+    /* =========================
+       TITLE
+    ========================== */
+
+    h1 {
+
+      position: relative;
+
+      font-size:
+        clamp(55px, 11vw, 145px);
+
+      line-height: .9;
+
+      font-weight: 900;
+
+      letter-spacing: -6px;
+
+      text-transform: uppercase;
+
+      color: white;
+
+      text-shadow:
+        0 0 5px rgba(255,255,255,.7),
+        0 0 20px rgba(255,0,0,.55),
+        0 0 45px rgba(180,0,0,.45);
+
+      animation:
+        titleGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+
+      0%, 100% {
+
+        text-shadow:
+          0 0 5px rgba(255,255,255,.7),
+          0 0 20px rgba(255,0,0,.5),
+          0 0 45px rgba(180,0,0,.4);
+      }
+
+      50% {
+
+        text-shadow:
+          0 0 8px rgba(255,255,255,.9),
+          0 0 30px rgba(255,0,0,.8),
+          0 0 75px rgba(180,0,0,.7);
+      }
+    }
+
+
+    /* =========================
+       SUBTITLE
+    ========================== */
+
+    .subtitle {
+
+      margin-top: 25px;
+
+      color:
+        rgba(255,255,255,.5);
+
+      font-size: 12px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       SEND MESSAGE BUTTON
+    ========================== */
+
+    .open-button {
+
+      position: relative;
+
+      margin-top: 35px;
+
+      height: 52px;
+
+      padding: 0 28px;
+
+      border-radius: 13px;
+
+      border:
+        1px solid
+        rgba(255,50,50,.4);
+
+      background:
+        linear-gradient(
+          135deg,
+          #780000,
+          #c00000
+        );
+
+      color: white;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 25px
+        rgba(180,0,0,.25);
+
+      transition:
+        .25s ease;
+
+      overflow: hidden;
+    }
+
+    .open-button:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 0 35px
+        rgba(255,0,0,.4);
+    }
+
+    .open-button:active {
+
+      transform:
+        scale(.97);
+    }
+
+
+    /* =========================
+       MODAL OVERLAY
+    ========================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 50;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,.62);
+
+      backdrop-filter:
+        blur(15px);
+
+      -webkit-backdrop-filter:
+        blur(15px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+        opacity .3s ease,
+        visibility .3s ease;
+    }
+
+    .modal.active {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+    }
+
+
+    /* =========================
+       MODAL CARD
+    ========================== */
+
+    .modal-card {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: 460px;
+
+      padding: 30px;
+
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(55,0,0,.8),
+          rgba(8,0,0,.9)
+        );
+
+      border:
+        1px solid
+        rgba(255,40,40,.25);
+
+      backdrop-filter:
+        blur(30px);
+
+      -webkit-backdrop-filter:
+        blur(30px);
+
+      box-shadow:
+
+        0 0 60px
+        rgba(150,0,0,.25),
+
+        0 25px 80px
+        rgba(0,0,0,.6);
+
+      transform:
+        translateY(25px)
+        scale(.96);
+
+      transition:
+        transform .35s ease;
+    }
+
+    .modal.active .modal-card {
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+
+    /* =========================
+       CLOSE BUTTON
+    ========================== */
+
+    .close-button {
+
+      position: absolute;
+
+      right: 15px;
+      top: 15px;
+
+      width: 35px;
+      height: 35px;
+
+      border-radius: 10px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      background:
+        rgba(255,255,255,.04);
+
+      color:
+        rgba(255,255,255,.7);
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      transition:
+        .2s ease;
+    }
+
+    .close-button:hover {
+
+      background:
+        rgba(180,0,0,.3);
+
+      color: white;
+
+      border-color:
+        rgba(255,50,50,.35);
+    }
+
+
+    /* =========================
+       MODAL HEADER
+    ========================== */
+
+    .modal-icon {
+
+      width: 52px;
+      height: 52px;
+
+      margin-bottom: 17px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 15px;
+
+      background:
+        rgba(150,0,0,.2);
+
+      border:
+        1px solid
+        rgba(255,40,40,.2);
+
+      box-shadow:
+        0 0 25px
+        rgba(255,0,0,.15);
+
+      font-size: 23px;
+    }
+
+    .modal-card h2 {
+
+      font-size: 24px;
+
+      margin-bottom: 8px;
+
+      font-weight: 800;
+    }
+
+    .modal-description {
+
+      color:
+        rgba(255,255,255,.42);
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+      margin-bottom: 24px;
+    }
+
+
+    /* =========================
+       INPUTS
+    ========================== */
+
+    .input-group {
+
+      text-align: left;
+
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-size: 9px;
+
+      color:
+        rgba(255,255,255,.4);
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+
+      width: 100%;
+
+      border: 1px solid
+        rgba(255,255,255,.08);
+
+      outline: none;
+
+      border-radius: 12px;
+
+      background:
+        rgba(0,0,0,.35);
+
+      color: white;
+
+      font-family: inherit;
+
+      transition:
+        .25s ease;
+    }
+
+    input {
+
+      height: 47px;
+
+      padding: 0 14px;
+    }
+
+    textarea {
+
+      height: 110px;
+
+      padding: 13px 14px;
+
+      resize: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+
+      color:
+        rgba(255,255,255,.2);
+    }
+
+    input:focus,
+    textarea:focus {
+
+      border-color:
+        rgba(255,30,30,.5);
+
+      box-shadow:
+        0 0 20px
+        rgba(180,0,0,.12);
+
+      background:
+        rgba(30,0,0,.4);
+    }
+
+
+    /* =========================
+       SEND BUTTON
+    ========================== */
+
+    .send-button {
+
+      width: 100%;
+
+      height: 49px;
+
+      margin-top: 4px;
+
+      border-radius: 12px;
+
+      border:
+        1px solid
+        rgba(255,60,60,.4);
+
+      background:
+        linear-gradient(
+          135deg,
+          #850000,
+          #d00000
+        );
+
+      color: white;
+
+      font-weight: 800;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      cursor: pointer;
+
+      transition:
+        .25s ease;
+    }
+
+    .send-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 0 30px
+        rgba(220,0,0,.35);
+    }
+
+    .send-button:active {
+
+      transform:
+        scale(.98);
+    }
+
+
+    /* =========================
+       RESULT
+    ========================== */
+
+    .result {
+
+      min-height: 18px;
+
+      margin-top: 12px;
+
+      font-size: 10px;
+
+      color:
+        rgba(255,255,255,.4);
+    }
+
+    .result.success {
+
+      color:
+        #ff5555;
+    }
+
+    .result.error {
+
+      color:
+        #ff2222;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      .content {
+        padding: 30px 10px;
+      }
+
+      h1 {
+
+        font-size:
+          clamp(48px, 15vw, 80px);
+
+        letter-spacing: -3px;
+      }
+
+      .subtitle {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+      }
+
+      .modal {
+
+        padding: 14px;
+      }
+
+      .modal-card {
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+      }
+
+      .modal-card h2 {
+
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Particles -->
+  <div
+    class="particles"
+    id="particles">
+  </div>
+
+
+  <!-- Main -->
+  <main class="container">
+
+    <div class="content">
+
+      <div class="status">
+
+        <span class="status-dot"></span>
+
+        System Under Development
+
+      </div>
+
+
+      <h1>
+        Coming Soon
+      </h1>
+
+
+      <p class="subtitle">
+        Something powerful is being built
+      </p>
+
+
+      <!-- Open Modal -->
+      <button
+        class="open-button"
+        onclick="openModal()">
+
+        SEND MESSAGE
+
+      </button>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       MESSAGE MODAL
+  ========================== -->
+
+  <div
+    class="modal"
+    id="messageModal">
+
+    <div class="modal-card">
+
+      <!-- Close -->
+      <button
+        class="close-button"
+        onclick="closeModal()"
+        aria-label="Close">
+
+        ×
+
+      </button>
+
+
+      <div class="modal-icon">
+        ✦
+      </div>
+
+
+      <h2>
+        Send a Message
+      </h2>
+
+
+      <p class="modal-description">
+
+        Write your message below and
+        send it directly.
+
+      </p>
+
+
+      <!-- Name -->
+      <div class="input-group">
+
+        <label>
+          Name
+        </label>
+
+        <input
+          id="username"
+          type="text"
+          maxlength="50"
+          placeholder="Enter your name...">
+
+      </div>
+
+
+      <!-- Message -->
+      <div class="input-group">
+
+        <label>
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          maxlength="2000"
+          placeholder="Write your message..."></textarea>
+
+      </div>
+
+
+      <!-- Send -->
+      <button
+        class="send-button"
+        id="sendButton"
+        onclick="sendMessage()">
+
+        SEND MESSAGE
+
+      </button>
+
+
+      <div
+        class="result"
+        id="result">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =========================
+       DISCORD WEBHOOK
+    ========================== */
+
+    const WEBHOOK_URL =
+      "https://discord.com/api/webhooks/1543546231824060437/W3vfXNJwy_VuoDfwZE6RjoY0yQzBGPv7To9V8pWDhhdjG8tZEmErmSSdisGP8iDZ4FQU";
+
+
+    /* =========================
+       OPEN MODAL
+    ========================== */
+
+    function openModal() {
+
+      const modal =
+        document.getElementById(
+          "messageModal"
+        );
+
+      modal.classList.add("active");
+
+      document.body.style.overflow =
+        "hidden";
+
+      setTimeout(() => {
+
+        document
+          .getElementById("username")
+          .focus();
+
+      }, 300);
+    }
+
+
+    /* =========================
+       CLOSE MODAL
+    ========================== */
+
+    function closeModal() {
+
+      const modal =
+        document.getElementById(
+          "messageModal"
+        );
+
+      modal.classList.remove("active");
+
+      document.body.style.overflow =
+        "hidden";
+    }
+
+
+    /* =========================
+       CLOSE BY CLICKING OUTSIDE
+    ========================== */
+
+    document
+      .getElementById("messageModal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeModal();
+
+          }
+
+        }
+      );
+
+
+    /* =========================
+       ESC TO CLOSE
+    ========================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       SEND DISCORD MESSAGE
+    ========================== */
+
+    async function sendMessage() {
+
+      const username =
+        document
+          .getElementById("username")
+          .value
+          .trim();
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+      const button =
+        document.getElementById(
+          "sendButton"
+        );
+
+      const result =
+        document.getElementById(
+          "result"
+        );
+
+
+      if (!username) {
+
+        result.className =
+          "result error";
+
+        result.textContent =
+          "Please enter your name.";
+
+        return;
+      }
+
+
+      if (!message) {
+
+        result.className =
+          "result error";
+
+        result.textContent =
+          "Please write a message.";
+
+        return;
+      }
+
+
+      button.disabled = true;
+
+      button.textContent =
+        "SENDING...";
+
+
+      result.className =
+        "result";
+
+      result.textContent =
+        "";
+
+
+      try {
+
+        const response =
+          await fetch(
+            WEBHOOK_URL,
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+
+                username:
+                  "Website Messages",
+
+                embeds: [
+
+                  {
+
+                    title:
+                      "📩 New Message",
+
+                    color:
+                      9109504,
+
+                    fields: [
+
+                      {
+                        name:
+                          "👤 Name",
+
+                        value:
+                          username,
+
+                        inline:
+                          false
+                      },
+
+                      {
+                        name:
+                          "💬 Message",
+
+                        value:
+                          message,
+
+                        inline:
+                          false
+                      }
+
+                    ],
+
+                    footer: {
+
+                      text:
+                        "Website Message System"
+
+                    },
+
+                    timestamp:
+                      new Date()
+                        .toISOString()
+
+                  }
+
+                ]
+
+              })
+
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Request failed"
+          );
+
+        }
+
+
+        result.className =
+          "result success";
+
+        result.textContent =
+          "Message sent successfully.";
+
+
+        document
+          .getElementById("username")
+          .value = "";
+
+        document
+          .getElementById("message")
+          .value = "";
+
+
+        setTimeout(() => {
+
+          closeModal();
+
+        }, 1200);
+
+
+      } catch (error) {
+
+        result.className =
+          "result error";
+
+        result.textContent =
+          "Failed to send message.";
+
+      }
+
+
+      button.disabled = false;
+
+      button.textContent =
+        "SEND MESSAGE";
+    }
+
+
+    /* =========================
+       PARTICLES
+    ========================== */
+
+    const particles =
+      document.getElementById(
+        "particles"
+      );
+
+    const particleCount =
+      window.innerWidth < 600
+        ? 35
+        : 70;
+
+
+    for (
+      let i = 0;
+      i < particleCount;
+      i++
+    ) {
+
+      const particle =
+        document.createElement(
+          "span"
+        );
+
+      particle.className =
+        "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDuration =
+        (5 + Math.random() * 10)
+        + "s";
+
+      particle.style.animationDelay =
+        Math.random() * 10 + "s";
+
+      const size =
+        1 + Math.random() * 3;
+
+      particle.style.width =
+        size + "px";
+
+      particle.style.height =
+        size + "px";
+
+      particles.appendChild(
+        particle
+      );
+    }
+
+  </script>
+
+</body>
+  </html>
