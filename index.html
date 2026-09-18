@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coming Soon</title>
+  <title>INT3X — Coming Soon</title>
 
   <style>
     * {
@@ -91,9 +91,9 @@
     }
 
     @keyframes pulse {
-
       0%, 100% {
         opacity: .55;
+
         transform:
           translate(-50%, -50%)
           scale(.9);
@@ -101,6 +101,7 @@
 
       50% {
         opacity: .9;
+
         transform:
           translate(-50%, -50%)
           scale(1.1);
@@ -108,7 +109,6 @@
     }
 
     @keyframes moveGlow {
-
       0% {
         transform: translate(0, 0);
       }
@@ -156,7 +156,6 @@
     }
 
     @keyframes float {
-
       0% {
         transform:
           translateY(110vh)
@@ -188,7 +187,6 @@
     ========================== */
 
     .container {
-
       position: relative;
 
       z-index: 5;
@@ -206,7 +204,6 @@
     }
 
     .content {
-
       position: relative;
 
       width: 100%;
@@ -222,7 +219,6 @@
     ========================== */
 
     .status {
-
       display: inline-flex;
 
       align-items: center;
@@ -233,7 +229,8 @@
 
       margin-bottom: 28px;
 
-      border: 1px solid
+      border:
+        1px solid
         rgba(255, 30, 30, .25);
 
       border-radius: 100px;
@@ -253,7 +250,6 @@
     }
 
     .status-dot {
-
       width: 7px;
       height: 7px;
 
@@ -269,7 +265,6 @@
     }
 
     @keyframes blink {
-
       0%, 100% {
         opacity: 1;
       }
@@ -285,7 +280,6 @@
     ========================== */
 
     h1 {
-
       position: relative;
 
       font-size:
@@ -311,9 +305,7 @@
     }
 
     @keyframes titleGlow {
-
       0%, 100% {
-
         text-shadow:
           0 0 5px rgba(255,255,255,.7),
           0 0 20px rgba(255,0,0,.5),
@@ -321,7 +313,6 @@
       }
 
       50% {
-
         text-shadow:
           0 0 8px rgba(255,255,255,.9),
           0 0 30px rgba(255,0,0,.8),
@@ -335,7 +326,6 @@
     ========================== */
 
     .subtitle {
-
       margin-top: 25px;
 
       color:
@@ -354,7 +344,6 @@
     ========================== */
 
     .open-button {
-
       position: relative;
 
       margin-top: 35px;
@@ -397,7 +386,6 @@
     }
 
     .open-button:hover {
-
       transform:
         translateY(-3px);
 
@@ -407,9 +395,50 @@
     }
 
     .open-button:active {
-
       transform:
         scale(.97);
+    }
+
+
+    /* =========================
+       LEGAL LINKS
+    ========================== */
+
+    .legal-links {
+      margin-top: 24px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+    }
+
+    .legal-links a {
+      color:
+        rgba(255,255,255,.35);
+
+      text-decoration: none;
+
+      transition: .25s ease;
+    }
+
+    .legal-links a:hover {
+      color: #ff3333;
+
+      text-shadow:
+        0 0 12px
+        rgba(255,0,0,.5);
+    }
+
+    .legal-links span {
+      color:
+        rgba(255,255,255,.15);
     }
 
 
@@ -418,7 +447,6 @@
     ========================== */
 
     .modal {
-
       position: fixed;
 
       inset: 0;
@@ -453,7 +481,6 @@
     }
 
     .modal.active {
-
       opacity: 1;
 
       visibility: visible;
@@ -467,7 +494,6 @@
     ========================== */
 
     .modal-card {
-
       position: relative;
 
       width: 100%;
@@ -496,7 +522,6 @@
         blur(30px);
 
       box-shadow:
-
         0 0 60px
         rgba(150,0,0,.25),
 
@@ -512,7 +537,6 @@
     }
 
     .modal.active .modal-card {
-
       transform:
         translateY(0)
         scale(1);
@@ -524,7 +548,6 @@
     ========================== */
 
     .close-button {
-
       position: absolute;
 
       right: 15px;
@@ -554,7 +577,6 @@
     }
 
     .close-button:hover {
-
       background:
         rgba(180,0,0,.3);
 
@@ -570,7 +592,6 @@
     ========================== */
 
     .modal-icon {
-
       width: 52px;
       height: 52px;
 
@@ -598,7 +619,6 @@
     }
 
     .modal-card h2 {
-
       font-size: 24px;
 
       margin-bottom: 8px;
@@ -607,7 +627,6 @@
     }
 
     .modal-description {
-
       color:
         rgba(255,255,255,.42);
 
@@ -624,14 +643,12 @@
     ========================== */
 
     .input-group {
-
       text-align: left;
 
       margin-bottom: 15px;
     }
 
     .input-group label {
-
       display: block;
 
       margin-bottom: 7px;
@@ -648,10 +665,10 @@
 
     input,
     textarea {
-
       width: 100%;
 
-      border: 1px solid
+      border:
+        1px solid
         rgba(255,255,255,.08);
 
       outline: none;
@@ -670,14 +687,12 @@
     }
 
     input {
-
       height: 47px;
 
       padding: 0 14px;
     }
 
     textarea {
-
       height: 110px;
 
       padding: 13px 14px;
@@ -687,14 +702,12 @@
 
     input::placeholder,
     textarea::placeholder {
-
       color:
         rgba(255,255,255,.2);
     }
 
     input:focus,
     textarea:focus {
-
       border-color:
         rgba(255,30,30,.5);
 
@@ -712,7 +725,6 @@
     ========================== */
 
     .send-button {
-
       width: 100%;
 
       height: 49px;
@@ -747,7 +759,6 @@
     }
 
     .send-button:hover {
-
       transform:
         translateY(-2px);
 
@@ -757,7 +768,6 @@
     }
 
     .send-button:active {
-
       transform:
         scale(.98);
     }
@@ -768,7 +778,6 @@
     ========================== */
 
     .result {
-
       min-height: 18px;
 
       margin-top: 12px;
@@ -780,13 +789,11 @@
     }
 
     .result.success {
-
       color:
         #ff5555;
     }
 
     .result.error {
-
       color:
         #ff2222;
     }
@@ -803,7 +810,6 @@
       }
 
       h1 {
-
         font-size:
           clamp(48px, 15vw, 80px);
 
@@ -811,26 +817,22 @@
       }
 
       .subtitle {
-
         font-size: 9px;
 
         letter-spacing: 3px;
       }
 
       .modal {
-
         padding: 14px;
       }
 
       .modal-card {
-
         padding: 25px 20px;
 
         border-radius: 20px;
       }
 
       .modal-card h2 {
-
         font-size: 21px;
       }
     }
@@ -855,11 +857,9 @@
     <div class="content">
 
       <div class="status">
-
         <span class="status-dot"></span>
 
         System Under Development
-
       </div>
 
 
@@ -882,6 +882,22 @@
 
       </button>
 
+
+      <!-- Legal Links -->
+      <div class="legal-links">
+
+        <a href="terms.html">
+          Terms of Service
+        </a>
+
+        <span>•</span>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
     </div>
 
   </main>
@@ -897,7 +913,6 @@
 
     <div class="modal-card">
 
-      <!-- Close -->
       <button
         class="close-button"
         onclick="closeModal()"
@@ -919,14 +934,11 @@
 
 
       <p class="modal-description">
-
         Write your message below and
         send it directly.
-
       </p>
 
 
-      <!-- Name -->
       <div class="input-group">
 
         <label>
@@ -942,7 +954,6 @@
       </div>
 
 
-      <!-- Message -->
       <div class="input-group">
 
         <label>
@@ -957,7 +968,6 @@
       </div>
 
 
-      <!-- Send -->
       <button
         class="send-button"
         id="sendButton"
@@ -985,7 +995,7 @@
     ========================== */
 
     const WEBHOOK_URL =
-      "https://discord.com/api/webhooks/1543546231824060437/W3vfXNJwy_VuoDfwZE6RjoY0yQzBGPv7To9V8pWDhhdjG8tZEmErmSSdisGP8iDZ4FQU";
+      "YOUR_NEW_WEBHOOK_URL";
 
 
     /* =========================
@@ -1028,12 +1038,12 @@
       modal.classList.remove("active");
 
       document.body.style.overflow =
-        "hidden";
+        "";
     }
 
 
     /* =========================
-       CLOSE BY CLICKING OUTSIDE
+       CLOSE OUTSIDE
     ========================== */
 
     document
@@ -1161,9 +1171,8 @@
                 embeds: [
 
                   {
-
                     title:
-                      "📩 New Message",
+                      "New Message",
 
                     color:
                       9109504,
@@ -1172,7 +1181,7 @@
 
                       {
                         name:
-                          "👤 Name",
+                          "Name",
 
                         value:
                           username,
@@ -1183,7 +1192,7 @@
 
                       {
                         name:
-                          "💬 Message",
+                          "Message",
 
                         value:
                           message,
@@ -1195,16 +1204,13 @@
                     ],
 
                     footer: {
-
                       text:
                         "Website Message System"
-
                     },
 
                     timestamp:
                       new Date()
                         .toISOString()
-
                   }
 
                 ]
@@ -1321,4 +1327,4 @@
   </script>
 
 </body>
-  </html>
+</html>
