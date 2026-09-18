@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>INT3X — Terms of Service</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #b00000;
+      --bright-red: #ff1a1a;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #030000;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 30px 20px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(150, 0, 0, .35);
+      filter: blur(150px);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 40, 40, .25);
+      border-radius: 10px;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      background: rgba(80,0,0,.15);
+      transition: .25s;
+    }
+
+    .back:hover {
+      color: white;
+      border-color: rgba(255,40,40,.5);
+      transform: translateY(-2px);
+    }
+
+    .card {
+      padding: 35px;
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(55,0,0,.75),
+          rgba(8,0,0,.9)
+        );
+
+      border: 1px solid rgba(255,40,40,.2);
+
+      backdrop-filter: blur(30px);
+
+      box-shadow:
+        0 0 60px rgba(150,0,0,.2);
+    }
+
+    .label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 50px;
+
+      border: 1px solid rgba(255,40,40,.25);
+
+      color: #ff5555;
+
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .updated {
+      color: rgba(255,255,255,.35);
+      font-size: 11px;
+      margin-bottom: 35px;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    li {
+      color: rgba(255,255,255,.58);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <a class="back" href="index.html">
+      ← Back to INT3X
+    </a>
+
+    <div class="card">
+
+      <div class="label">
+        INT3X
+      </div>
+
+      <h1>
+        Terms of Service
+      </h1>
+
+      <div class="updated">
+        Last Updated: September 18, 2026
+      </div>
+
+      <p>
+        By using INT3X, you agree to these Terms of Service.
+        If you do not agree with these terms, please do not use
+        the application or its services.
+      </p>
+
+      <h2>1. Use of INT3X</h2>
+
+      <p>
+        INT3X is a Discord application designed to provide
+        management, moderation and other server-related features.
+        You agree to use INT3X only for lawful purposes and in
+        accordance with Discord's rules and policies.
+      </p>
+
+      <h2>2. User Responsibilities</h2>
+
+      <ul>
+        <li>You are responsible for your use of INT3X.</li>
+        <li>You must not use INT3X to abuse, harass or harm others.</li>
+        <li>You must not attempt to disrupt or exploit the service.</li>
+        <li>You must follow Discord's Terms of Service and Community Guidelines.</li>
+      </ul>
+
+      <h2>3. Availability</h2>
+
+      <p>
+        INT3X may be modified, updated, suspended or discontinued
+        at any time. We do not guarantee that the service will
+        always be available or error-free.
+      </p>
+
+      <h2>4. Termination</h2>
+
+      <p>
+        Access to INT3X may be restricted or terminated if the
+        application is misused or these terms are violated.
+      </p>
+
+      <h2>5. Changes to These Terms</h2>
+
+      <p>
+        These Terms of Service may be updated from time to time.
+        Continued use of INT3X after changes are published means
+        that you accept the updated terms.
+      </p>
+
+      <h2>6. Contact</h2>
+
+      <p>
+        If you have questions regarding these Terms of Service,
+        please contact the INT3X administration.
+      </p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
